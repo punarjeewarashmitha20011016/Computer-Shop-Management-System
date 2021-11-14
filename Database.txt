@@ -1,0 +1,265 @@
+//adminLogin
+//cashierLogin
+//Customer
+//computers/parts(ItemTable)
+//AddRepairsToProgress
+//RepairsDetails
+//RepairsFinished
+//OrderNormalSales
+//OrderNormalDetails
+//RepairOrders
+//OrderRepairDetails
+//NormalOrdersIncome
+//RepairOrdersIncome
+//returnItems
+
+--------------------------------------------------
+
+drop database GreenComputers;
+create database if not exists GreenComputers;
+use GreenComputers;
+
+drop table if exists cashierLogin;
+create table if not exists cashierLogin(
+	cashierId VARCHAR(6),
+	cashierName VARCHAR(30)NOT NULL,
+	cashierNic VARCHAR(12)NOT NULL,
+	cashierContactNo VARCHAR(10),
+	cashierUserName VARCHAR(30)NOT NULL,
+	cashierPassword VARCHAR(30)NOT NULL,
+	cashierImage VARCHAR(500),
+	CONSTRAINT PRIMARY KEY(cashierId)
+);
+show tables;
+desc cashierLogin;
+
+drop table if exists adminLogin;
+create table if not exists adminLogin(
+	adminId VARCHAR(6),
+	adminName VARCHAR(30)NOT NULL,
+	adminNic VARCHAR(12)NOT NULL,
+	adminContactNo VARCHAR(10),
+	adminUserName VARCHAR(30)NOT NULL,
+	adminPassword VARCHAR(30)NOT NULL,
+	adminImage VARCHAR(500),
+	CONSTRAINT PRIMARY KEY(adminId)
+);
+show tables;
+desc adminLogin;
+
+
+drop table if exists Customer;
+create table if not exists Customer(
+	customerId VARCHAR(6),
+	customerName VARCHAR(20),
+	customerTelNo VARCHAR(10),
+	customerAddress TEXT,
+	CONSTRAINT PRIMARY KEY(customerId)
+);
+show tables;
+desc Customer;
+
+drop table if exists Computers_Items;
+create table if not exists Computers_Items(
+	itemCode VARCHAR(6),
+	itemDescription TEXT,
+	itemBrand TEXT,
+	itemCategory TEXT,
+	itemRam INT,
+	itemStorage INT,
+	itemQty INT,
+	itemBuyingPrice DOUBLE,
+	itemUnitPrice DOUBLE,
+	CONSTRAINT PRIMARY KEY(itemCode)
+);
+show tables;
+desc Computers_Items;
+
+drop table if exists itemBrands;
+create table if not exists itemBrands(
+	itemBrand VARCHAR(10)
+);
+desc itemBrands;
+
+drop table if exists itemCategory;
+create table if not exists itemCategory(
+	itemCategory VARCHAR(10)
+);
+desc itemCategory;
+
+drop table if exists GenerateRepairId;
+create table if not exists GenerateRepairId(
+	repairId VARCHAR(6),
+	CONSTRAINT PRIMARY KEY(repairId)
+);
+desc GenerateRepairId;
+
+drop table if exists RepairsInProgress;
+create table if not exists RepairsInProgress(
+	customerId VARCHAR(6)NOT NULL,
+	repairId VARCHAR(6),
+	repairItemDescription TEXT,
+	repairStartDate DATE,
+	repairEstimatedFinishedDate DATE,
+	repairCost Double,
+	CONSTRAINT PRIMARY KEY (repairId),
+	CONSTRAINT FOREIGN KEY (repairId) REFERENCES GenerateRepairId(repairId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (customerId) REFERENCES Customer(customerId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc RepairsInProgress;
+
+drop table if exists RepairDetails;
+create table if not exists RepairDetails(
+	repairId VARCHAR(6),
+	repairCount INT(10),
+	repairItemDescription TEXT,
+	repairType VARCHAR(30),
+	repairPart TEXT,
+	repairUnitPrice DOUBLE,	
+	CONSTRAINT PRIMARY KEY (repairId,repairCount),
+	CONSTRAINT FOREIGN KEY (repairID) REFERENCES GenerateRepairId(repairId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc RepairDetails;
+
+drop table if exists RepairsFinished;
+create table if not exists RepairsFinished(
+	customerId VARCHAR(6)NOT NULL,
+	repairId VARCHAR(6),
+	repairItemDescription TEXT,
+	repairStartDate DATE,
+	repairFinishedDate DATE,	
+	repairCost Double,
+	CONSTRAINT PRIMARY KEY (repairId),
+	CONSTRAINT FOREIGN KEY (repairId) REFERENCES GenerateRepairId(repairId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (customerId) REFERENCES Customer(customerId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc RepairsFinished;
+
+drop table if exists RepairFinishedDetails;
+create table if not exists RepairFinishedDetails(
+	repairId VARCHAR(6),
+	repairCount INT(10),
+	repairItemDescription TEXT,
+	repairType VARCHAR(30),
+	repairPart TEXT,
+	repairUnitPrice DOUBLE,	
+	CONSTRAINT PRIMARY KEY (repairId,repairCount),
+	CONSTRAINT FOREIGN KEY (repairID) REFERENCES GenerateRepairId(repairId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc RepairFinishedDetails;
+
+
+drop table if exists repairServicesType;
+create table if not exists repairServicesType(
+	serviceType TEXT,
+	serviceCost Double
+);
+desc repairServicesType;
+
+drop table if exists repairServicesParts;
+create table if not exists repairServicesParts(
+	itemCode VARCHAR(6),
+	itemDescription TEXT,
+	itemQty INT,
+	itemUnitPrice Double,
+	CONSTRAINT PRIMARY KEY(itemCode),
+	CONSTRAINT FOREIGN KEY(itemCode)REFERENCES Computers_Items(itemCode)ON DELETE CASCADE ON UPDATE CASCADE
+);
+desc repairServicesParts;
+
+
+drop table if exists NormalOrder;
+create table if not exists NormalOrder(
+	orderId VARCHAR(6),
+	customerId VARCHAR(6),
+	orderDate DATE,
+	orderTime VARCHAR(20),
+	orderPrice DOUBLE,
+	CONSTRAINT PRIMARY KEY (orderId),
+	CONSTRAINT FOREIGN KEY (customerId) REFERENCES Customer(customerId)ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc NormalOrder;
+
+drop table if exists NormalOrderDetails;
+create table if not exists NormalOrderDetails(
+	orderId VARCHAR(6),
+	itemCode VARCHAR(6),
+	itemDescription TEXT,
+	itemBrand TEXT,
+	itemCategory TEXT,
+	itemRam INT,
+	itemStorage INT,
+	itemQtyOnHand INT,
+	itemDiscount DOUBLE,
+	itemPrice DOUBLE,
+	CONSTRAINT PRIMARY KEY(orderId,itemCode),
+	CONSTRAINT FOREIGN KEY (itemCode) REFERENCES Computers_Items(itemCode) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (orderId) REFERENCES NormalOrder(orderId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc NormalOrderDetails;
+
+drop table if exists RepairOrder;
+create table if not exists RepairOrder(
+	orderId VARCHAR(6),
+	repairId VARCHAR(6),
+	customerId VARCHAR(6),
+	orderDate DATE,
+	orderTime VARCHAR(20),
+	orderDiscount Double,
+	orderPrice DOUBLE,
+	CONSTRAINT PRIMARY KEY (orderId),
+	CONSTRAINT FOREIGN KEY (customerId) REFERENCES Customer(customerId)ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY (repairId) REFERENCES GenerateRepairId(repairId)ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc RepairOrder;
+
+drop table if exists RepairOrderDetails;
+create table if not exists RepairOrderDetails(
+	orderId VARCHAR(6),
+	repairCount INT,
+	repairItemDescription TEXT,
+	repairType VARCHAR(30),
+	repairPart VARCHAR(30),
+	repairStartDate DATE,
+	repairFinishedDate DATE,
+	repairItemPrice DOUBLE,
+	CONSTRAINT PRIMARY KEY(orderId,repairCount),
+	CONSTRAINT FOREIGN KEY (orderId) REFERENCES RepairOrder(orderId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc RepairOrderDetails;
+
+drop table if exists ReturnItems;
+create table if not exists ReturnItems(
+	returnId VARCHAR(6),
+	orderId VARCHAR(6),
+	customerId VARCHAR(6),
+	itemCode VARCHAR(6),
+	itemDescription TEXT,
+	returnQty INT,
+	returnReason TEXT,
+	itemPrice Double,
+	CONSTRAINT PRIMARY KEY(returnId),
+	CONSTRAINT FOREIGN KEY(orderId)REFERENCES NormalOrder(orderId) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY(itemCode)REFERENCES Computers_Items(itemCode) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT FOREIGN KEY(customerId)REFERENCES Customer(customerId) ON DELETE CASCADE ON UPDATE CASCADE
+);
+show tables;
+desc ReturnItems;
+
+drop table if exists Income;
+create table if not exists Income(
+	dateAsPerIncome DATE,
+	normalSalesIncome DOUBLE,
+	repairSalesIncome DOUBLE,
+	totalIncome DOUBLE,
+	CONSTRAINT PRIMARY KEY(dateAsPerIncome)
+);
+desc Income;
