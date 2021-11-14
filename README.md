@@ -14,10 +14,6 @@ This application handles the overall business processes. The business processes 
 - Usr can upload an image to his/her login details and can view that image when he/she logs into the system.
 <br />
 <br />
-**Screen shots of my application are as follows,**
- <br />
- <br />
- ![Image](C:\Users\Punarjeewa\Desktop\Assignments\FirstSemesterFinalProject\Green_Computers\src\view\assets\green computers.png)
  
   
   
