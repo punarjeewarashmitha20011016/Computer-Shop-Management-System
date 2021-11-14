@@ -16,7 +16,8 @@ This application handles the overall business processes. The business processes 
  **Screen shots of my application are as follows,**
  <br />
  <br />
-  ![Image](C:\Users\Punarjeewa\Desktop\Assignments\FirstSemesterFinalProject\Green_Computers\src\view\assets\green computers.jpg)
+  ![Image](C:\Users\Punarjeewa\Desktop\Assignments\FirstSemesterFinalProject\Green_Computers\src\view\assets\green computers.png)
+  
   
   
   
