@@ -44,6 +44,7 @@ This application handles the overall business processes. The business processes 
 ***Notifications Interface***
 <br />
 ![notifications](https://user-images.githubusercontent.com/90233500/141670043-388ba69d-c86d-494f-8f42-292c0bd4ce08.jpg)
+<br />
 ***Cashier Dashboard***
 <br />
 ![Cashier Dashboard](https://user-images.githubusercontent.com/90233500/141668852-ebc2ce2b-a1ac-4dcf-baa6-98b7f7c8802d.png)
