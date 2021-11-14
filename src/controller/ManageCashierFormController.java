@@ -272,8 +272,8 @@ public class ManageCashierFormController {
         int existIndex = isExist();
         if (buttonType.get().equals(ButtonType.YES)) {
             if (cashierBO.updateCashier(cashierDTO)) {
-                tblCashierDetailsView.getItems().remove(existIndex);
-                tblCashierDetailsView.getItems().add(new CashierDetailsTm(cashierDTO.getCashierId(), cashierDTO.getCashierName(), cashierDTO.getCashierNic(), cashierDTO.getCashierContactNo(), cashierDTO.getCashierUserName(), cashierDTO.getCashierPassword()));
+                cashierDetailsObservableList.remove(existIndex);
+                cashierDetailsObservableList.add(new CashierDetailsTm(cashierDTO.getCashierId(), cashierDTO.getCashierName(), cashierDTO.getCashierNic(), cashierDTO.getCashierContactNo(), cashierDTO.getCashierUserName(), cashierDTO.getCashierPassword()));
                 tblCashierDetailsView.refresh();
                 clearTextFields();
                 generateCashierId();

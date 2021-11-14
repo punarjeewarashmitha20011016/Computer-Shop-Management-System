@@ -15,9 +15,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import view.tm.CustomerTm;
 import util.CommonFunctions;
 import util.Validator;
+import view.tm.CustomerTm;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class ManageCustomerFormController {
     Pattern customerAddressPattern = Pattern.compile("^[A-z0-9+/, ]+[.]?$");
     int selectedIndexFromTheTable = -1;
     private ManageCustomerBO manageCustomerBO = (ManageCustomerBO) BOFactory.getBoFactory().getBoTypes(BOFactory.BOTypes.CUSTOMER);
-    private final ObservableList<CustomerTm>customerObservableList= FXCollections.observableArrayList();
+    private final ObservableList<CustomerTm> customerObservableList = FXCollections.observableArrayList();
 
     public void initialize() {
         textFields.clear();
@@ -63,15 +63,15 @@ public class ManageCustomerFormController {
             setCustomerId();
             getPreviousCustomerRegistered();
             getCountOfCustomers();
+
+            tblCustomerId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
+            tblCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
+            tblCustomerTelNo.setCellValueFactory(new PropertyValueFactory<>("customerContactNo"));
+            tblCustomerAddress.setCellValueFactory(new PropertyValueFactory<>("customerAddress"));
+            setDataToTable();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
-        tblCustomerId.setCellValueFactory(new PropertyValueFactory<>("customerId"));
-        tblCustomerName.setCellValueFactory(new PropertyValueFactory<>("customerName"));
-        tblCustomerTelNo.setCellValueFactory(new PropertyValueFactory<>("customerContactNo"));
-        tblCustomerAddress.setCellValueFactory(new PropertyValueFactory<>("customerAddress"));
-        setDataToTable();
 
         searchCustomersFromTheTable();
         selectColumnFromTheTableAndSetValues();
@@ -93,10 +93,10 @@ public class ManageCustomerFormController {
     }
 
     public void setCustomerId() throws SQLException {
-            txtCustomerId.setDisable(false);
-            String customerId = manageCustomerBO.getCustomerId();
-            System.out.println(customerId);
-            txtCustomerId.setText(customerId);
+        txtCustomerId.setDisable(false);
+        String customerId = manageCustomerBO.getCustomerId();
+        System.out.println(customerId);
+        txtCustomerId.setText(customerId);
     }
 
     public void btnAddCustomer(ActionEvent actionEvent) {
@@ -124,7 +124,7 @@ public class ManageCustomerFormController {
 
     public void btnUpdateCustomer(ActionEvent actionEvent) {
         CustomerDTO c = new CustomerDTO(txtCustomerId.getText(), txtCustomerName.getText(), txtCustomerContactNo.getText(), txtCustomerAddress.getText());
-        int index=ifCustomerExists(txtCustomerId.getText());
+        int index = ifCustomerExists(txtCustomerId.getText());
         try {
             if (!ifCustomerExists()) {
                 CommonFunctions.setNotificationWarning("Customer doesn't exists", "Customer id - " + c.getCustomerId() + " doesn't exists");
@@ -132,7 +132,7 @@ public class ManageCustomerFormController {
                 if (manageCustomerBO.updateCustomer(c)) {
                     setNotificationSuccess("Customer Updated", "Customer Updated Successfully");
                     customerObservableList.remove(index);
-                    customerObservableList.add(new CustomerTm(c.getCustomerId(),c.getCustomerName(),c.getCustomerContactNo(),c.getCustomerAddress()));
+                    customerObservableList.add(new CustomerTm(c.getCustomerId(), c.getCustomerName(), c.getCustomerContactNo(), c.getCustomerAddress()));
                     clearTextFields();
                     CommonFunctions.setDisableFields(validations);
                     setCustomerId();
@@ -184,12 +184,14 @@ public class ManageCustomerFormController {
             throwables.printStackTrace();
         }
     }
-    public int ifCustomerExists(String id){
-        for (int i = 0; i <customerObservableList.size(); i++) {
-            if (customerObservableList.get(i).getCustomerId().equals(id)){
+
+    public int ifCustomerExists(String id) {
+        for (int i = 0; i < customerObservableList.size(); i++) {
+            if (customerObservableList.get(i).getCustomerId().equals(id)) {
                 return i;
             }
-        }return -1;
+        }
+        return -1;
     }
 
     public void validateTextFields() {
@@ -218,17 +220,14 @@ public class ManageCustomerFormController {
         CommonFunctions.clearFields(validations);
     }
 
-    public void setDataToTable() {
-        tblCustomerDetails.getItems().clear();
-        try {
-            ArrayList<CustomerDTO> all = manageCustomerBO.getAll();
-            for (CustomerDTO c : all
-            ) {
-                tblCustomerDetails.getItems().add(new CustomerTm(c.getCustomerId(), c.getCustomerName(), c.getCustomerContactNo(), c.getCustomerAddress()));
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+    public void setDataToTable() throws SQLException {
+        customerObservableList.clear();
+        ArrayList<CustomerDTO> all = manageCustomerBO.getAll();
+        for (CustomerDTO c : all
+        ) {
+            customerObservableList.add(new CustomerTm(c.getCustomerId(), c.getCustomerName(), c.getCustomerContactNo(), c.getCustomerAddress()));
         }
+        tblCustomerDetails.setItems(customerObservableList);
     }
 
     public void getPreviousCustomerRegistered() throws SQLException {

@@ -207,7 +207,7 @@ public class CashierFormController {
             Label label = new Label();
             label.setStyle("-fx-text-fill: white;");
             label.setStyle("-fx-font-size: 55");
-            count++;
+            ++count;
             lblNotificationCount.setText(String.valueOf(count));
             label.setText("Check Repair Id " + repairsInProgressDTOS.get(i).getRepairId() + " in the Repairs In Progress Section");
             labelArrayListCashier.add(label);
@@ -217,7 +217,7 @@ public class CashierFormController {
             Label label = new Label();
             label.setStyle("-fx-text-fill: white;");
             label.setStyle("-fx-font-size: 55");
-            count++;
+            ++count;
             lblNotificationCount.setText(String.valueOf(count));
             label.setText("Check Repair Id " + repairsFinishedDTOS.get(i).getRepairId() + " in the Repairs Finished Section");
             labelArrayListCashier.add(label);
