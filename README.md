@@ -1,5 +1,5 @@
 #Green Computers - Computer Shop Management System
-<br />
+
 _This is the final individual project which is implemented for a Computer Shop for managing their business process.
 The technologies which I have used to implement this application are Java, Javafx, MySql, Jaspersoft.
 This application handles the overall business processes. The business processes which is handled in this system are placing an order, placing a repair order, managing returns._
@@ -14,10 +14,11 @@ This application handles the overall business processes. The business processes 
 - Usr can upload an image to his/her login details and can view that image when he/she logs into the system.
 <br />
 <br />
- **Screen shots of my application are as follows,**
+**Screen shots of my application are as follows,**
  <br />
  <br />
  ![Image](C:\Users\Punarjeewa\Desktop\Assignments\FirstSemesterFinalProject\Green_Computers\src\view\assets\green computers.png)
+ 
   
   
   
