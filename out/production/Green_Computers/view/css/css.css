@@ -1,0 +1,28 @@
+.cbx15{
+    -fx-font-size: 15px;
+}
+.txt{
+    -fx-text-inner-color: White;
+}
+.text-field {
+    -fx-prompt-text-fill: white;
+}
+.mainAnchor {
+    -fx-background-color:slategrey;
+}
+.subAnchor {
+    -fx-background-color: linear-gradient(slategrey,antiquewhite);
+    -fx-background-radius: 60;
+}
+.container{
+    -fx-background-color: linear-gradient(slategrey,#005797);
+}
+
+.label{
+    -fx-font-family: "Times New Roman";
+    -fx-font-style: normal;
+    -fx-font-size: 15;
+}
+.image{
+    -fx-border-color: green;
+}

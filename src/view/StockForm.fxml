@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="itemStockPane" prefHeight="602.0" prefWidth="1159.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.StockFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="574.0" layoutX="25.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="1107.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d8e1d9" />
+                  <Stop color="#e3ebe4" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <TableView fx:id="tblItemStock" layoutX="44.0" layoutY="152.0" prefHeight="413.0" prefWidth="1069.0" stylesheets="@css/tbl.css">
+        <columns>
+          <TableColumn fx:id="tblItemCode" prefWidth="76.0" text="Item Code" />
+            <TableColumn fx:id="tblItemDescription" prefWidth="209.0" text="Item Description" />
+            <TableColumn fx:id="tblItemBrand" prefWidth="137.0" text="Item Brand" />
+            <TableColumn fx:id="tblItemCategory" prefWidth="133.0" text="Item Category" />
+            <TableColumn fx:id="tblItemRam" prefWidth="114.0" text="Item RAM" />
+            <TableColumn fx:id="tblItemStorage" prefWidth="87.0" text="Item Storage" />
+            <TableColumn fx:id="tblItemQty" prefWidth="59.0" text="Item Qty" />
+            <TableColumn fx:id="tblItemBuyingPrice" prefWidth="123.0" text="Item Buying Price" />
+            <TableColumn fx:id="tblItemUnitPrice" prefWidth="130.0" text="Unit Price" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="63.0" fitWidth="70.0" layoutX="550.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/warehouse.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="432.0" layoutY="30.0" text="ITEMS">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="627.0" layoutY="30.0" text="STOCK">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSearchItems" layoutX="87.0" layoutY="105.0" prefHeight="31.0" prefWidth="494.0" promptText="Search items by Item Code, Item Description, Item Brand, Item Category">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="46.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

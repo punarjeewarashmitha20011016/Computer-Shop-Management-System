@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="otpView" prefHeight="211.0" prefWidth="349.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AuthenticationFormController">
+   <children>
+      <Label layoutX="114.0" layoutY="22.0" text="Confirm Navigation" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="180.0" layoutY="144.0" onAction="#btnLogToCreateAdminAccount" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: GREEN;" text="LOGIN" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXPasswordField fx:id="otpPassword" focusColor="WHITE" labelFloat="true" layoutX="76.0" layoutY="87.0" prefHeight="25.0" prefWidth="197.0" promptText="OTP Password" styleClass="txt" stylesheets="@css/css.css" />
+      <JFXButton buttonType="RAISED" layoutX="84.0" layoutY="144.0" onAction="#btnBackToLogin" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #bdc3c7;" text="BACK">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="repairOrderDetailsPane" prefHeight="432.0" prefWidth="952.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RepairOrderDetailsFormController">
+   <children>
+      <TableView fx:id="tblRepairOrderDetailsView" layoutX="14.0" layoutY="87.0" prefHeight="326.0" prefWidth="921.0" stylesheets="@css/tbl.css">
+         <columns>
+            <TableColumn fx:id="tblOrderId" prefWidth="87.0" text="Order Id" />
+            <TableColumn fx:id="tblRepairCount" prefWidth="100.0" text="Repair Count" />
+            <TableColumn fx:id="tblItemDescription" prefWidth="151.0" text="Repair Item Description" />
+            <TableColumn fx:id="tblRepairType" prefWidth="101.0" text="Repair Type" />
+            <TableColumn fx:id="tblRepairPart" prefWidth="113.0" text="Repair Part" />
+            <TableColumn fx:id="tblRepairStartDate" prefWidth="113.0" text="Repair Start Date" />
+            <TableColumn fx:id="tblRepairFinishedDate" prefWidth="128.0" text="Repair Finished Date" />
+            <TableColumn fx:id="tblRepairCost" prefWidth="127.0" text="Repair Cost" />
+         </columns>
+      </TableView>
+      <Label layoutX="296.0" layoutY="20.0" text="Repair Order Details">
+         <font>
+            <Font name="Monospaced Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

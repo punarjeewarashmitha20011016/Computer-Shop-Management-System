@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="viewOrdersPane" prefHeight="602.0" prefWidth="1159.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewOrderDetailsFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="574.0" layoutX="15.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="1119.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#d7e1da" />
+                  <Stop color="#d3ddd7" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="427.0" layoutX="42.0" layoutY="149.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="398.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#11998e" />
+                  <Stop color="#4bc97a" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="83.0" layoutY="192.0" text="Order Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="206.0" layoutY="192.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="83.0" layoutY="252.0" text="Customer Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="206.0" layoutY="250.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label layoutX="83.0" layoutY="322.0" text="Order Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="206.0" layoutY="320.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="206.0" layoutY="389.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label layoutX="83.0" layoutY="391.0" text="Order Time" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label layoutX="83.0" layoutY="460.0" text="Order Cost" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="206.0" layoutY="458.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblNormalOrderId" alignment="CENTER" layoutX="248.0" layoutY="192.0" prefHeight="20.0" prefWidth="155.0" text="Order Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNormalCustomerId" alignment="CENTER" layoutX="248.0" layoutY="252.0" prefHeight="30.0" prefWidth="155.0" text="Customer Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblNormalOrderDate" alignment="CENTER" layoutX="248.0" layoutY="322.0" prefHeight="30.0" prefWidth="155.0" text="Order Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblNormalOrderTime" alignment="CENTER" layoutX="248.0" layoutY="391.0" prefHeight="30.0" prefWidth="155.0" text="Order Time" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblNormalOrderCost" alignment="CENTER" layoutX="248.0" layoutY="460.0" prefHeight="30.0" prefWidth="155.0" text="Order Cost" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <JFXButton layoutX="471.0" layoutY="192.0" onAction="#btnViewNormalOrderDetails" prefHeight="34.0" prefWidth="211.0" style="-fx-background-color: #2471A3;" text="View Normal Order Details" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="114.0" fitWidth="128.0" layoutX="521.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/shopping-cart.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSearchNormalOrders" layoutX="87.0" layoutY="96.0" onKeyReleased="#getOrderDetailsEvent" prefHeight="31.0" prefWidth="353.0" promptText="Search Order by Order ID">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="46.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="427.0" layoutX="711.0" layoutY="149.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="398.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#11998e" />
+                  <Stop color="#4bc97a" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="750.0" layoutY="187.0" text="Order Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="873.0" layoutY="187.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="750.0" layoutY="298.0" text="Customer Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="873.0" layoutY="296.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="750.0" layoutY="357.0" text="Order Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="873.0" layoutY="355.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="873.0" layoutY="414.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="750.0" layoutY="416.0" text="Order Time" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label layoutX="750.0" layoutY="472.0" text="Order Discount" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="873.0" layoutY="470.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblRepairOrderId" alignment="CENTER" layoutX="915.0" layoutY="185.0" prefHeight="20.0" prefWidth="155.0" text="Order Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblRepairCustomerId" alignment="CENTER" layoutX="915.0" layoutY="296.0" prefHeight="30.0" prefWidth="155.0" text="Customer Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblRepairOrderDate" alignment="CENTER" layoutX="915.0" layoutY="355.0" prefHeight="30.0" prefWidth="155.0" text="Order Date" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblRepairOrderTime" alignment="CENTER" layoutX="915.0" layoutY="414.0" prefHeight="30.0" prefWidth="155.0" text="Order Time" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblRepairOrderDiscount" alignment="CENTER" layoutX="915.0" layoutY="470.0" prefHeight="30.0" prefWidth="155.0" text="Order Discount" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="706.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtSearchRepairOrders" layoutX="746.0" layoutY="100.0" onKeyReleased="#searchRepairEvent" prefHeight="25.0" prefWidth="363.0" promptText="Search Repair Order by Order ID">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Label layoutX="750.0" layoutY="529.0" text="Order Cost" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="873.0" layoutY="527.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblRepairOrderCost" alignment="CENTER" layoutX="915.0" layoutY="527.0" prefHeight="30.0" prefWidth="155.0" text="Order Cost" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <JFXButton layoutX="471.0" layoutY="256.0" onAction="#btnViewRepairOrderDetails" prefHeight="34.0" prefWidth="211.0" style="-fx-background-color: #2471A3;" text="View Repair Order Details" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="255.0" layoutX="471.0" layoutY="321.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="211.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#56ab2f" />
+                  <Stop color="#8dbf4b" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label fx:id="lblTotalItemsInTheOrder" alignment="CENTER" layoutX="499.0" layoutY="364.0" prefHeight="121.0" prefWidth="155.0" text="00" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label fx:id="labelCount" alignment="CENTER" layoutX="475.0" layoutY="504.0" prefHeight="30.0" prefWidth="204.0" text="Total Items in the Order" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
+      </Label>
+      <Label layoutX="750.0" layoutY="245.0" text="Repair Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label alignment="CENTER" layoutX="873.0" layoutY="245.0" prefHeight="20.0" prefWidth="18.0" text=":" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+      <Label fx:id="lblRepairId" alignment="CENTER" layoutX="915.0" layoutY="243.0" prefHeight="20.0" prefWidth="155.0" text="Repair Id" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>

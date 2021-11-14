@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="RepairsInProgressPane" prefHeight="488.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RepairsInProgressFormController">
+    <children>
+        <TableView fx:id="tblRepairsInProgress" layoutY="91.0" prefHeight="397.0" prefWidth="866.0" stylesheets="@css/tbl.css">
+            <columns>
+                <TableColumn fx:id="tblCustomerId" prefWidth="109.0" text="Customer Id" />
+                <TableColumn fx:id="tblRepairId" prefWidth="122.0" text="Repair Id" />
+                <TableColumn fx:id="tblRepairItemDescription" prefWidth="186.0" text="Repair Item Description" />
+                <TableColumn fx:id="tblRepairStartDate" prefWidth="147.0" text="Repair Start Date" />
+                <TableColumn fx:id="tblEstimatedFinishingDate" prefWidth="189.0" text="Estimated Finishing Date" />
+                <TableColumn fx:id="tblRepairCost" prefWidth="112.0" text="Repair Cost" />
+            </columns>
+        </TableView>
+      <TextField fx:id="txtSearchRepairs" layoutX="44.0" layoutY="29.0" prefHeight="25.0" prefWidth="356.0" promptText="Search Repairs In Progress by repair Id, Customer Id">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="3.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="415.0" layoutY="28.0" onAction="#btnFinishRepair" prefHeight="34.0" prefWidth="211.0" style="-fx-background-color: #2471A3;" text="Add to Finish Repairs" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+    </children>
+</AnchorPane>

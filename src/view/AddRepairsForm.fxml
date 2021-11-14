@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="addRepairs" prefHeight="488.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddRepairsFormController">
+   <children>
+      <TableView fx:id="tblAddRepairs" layoutY="53.0" prefHeight="436.0" prefWidth="864.0" stylesheets="@css/tbl.css">
+        <columns>
+          <TableColumn fx:id="tblCustomerId" prefWidth="98.0" text="Customer Id" />
+            <TableColumn fx:id="tblRepairId" prefWidth="116.0" text="Repair Id" />
+            <TableColumn fx:id="tblRepairItemDescription" prefWidth="231.0" text="Repair Item Description" />
+            <TableColumn fx:id="tblRepairType" prefWidth="150.0" text="Repair Type" />
+            <TableColumn fx:id="tblRepairPart" prefWidth="150.0" text="Repair Part" />
+            <TableColumn fx:id="tblRepairCost" prefWidth="118.0" text="Repair Cost" />
+        </columns>
+      </TableView>
+      <JFXButton layoutX="4.0" layoutY="10.0" onAction="#btnAddRepairToProgress" prefHeight="34.0" prefWidth="188.0" style="-fx-background-color: #2471A3;" text="Add Repair To Progress" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

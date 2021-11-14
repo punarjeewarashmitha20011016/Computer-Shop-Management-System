@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="repairServicesAndPartsPane" prefHeight="476.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddRepairServicesAndPartsFormController">
+   <children>
+      <JFXTextField fx:id="txtRepairType" focusColor="BLACK" labelFloat="true" layoutX="33.0" layoutY="34.0" onKeyReleased="#validateRepairTypeEvent" prefHeight="31.0" prefWidth="319.0" promptText="Repair Type" unFocusColor="#1900ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtRepairCost" focusColor="BLACK" labelFloat="true" layoutX="33.0" layoutY="88.0" onKeyReleased="#validateRepairTypeEvent" prefHeight="31.0" prefWidth="319.0" promptText="Repair Cost" unFocusColor="#1900ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="addRepairTypeId" disable="true" layoutX="33.0" layoutY="141.0" onAction="#btnAddRepairType" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #2471A3;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="updateRepairTypeId" layoutX="143.0" layoutY="141.0" onAction="#btnUpdateRepairType" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #2471A3;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="deleteRepairTypeId" layoutX="253.0" layoutY="141.0" onAction="#btnDeleteRepairType" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: #EC7063;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblRepairTypeView" layoutX="374.0" layoutY="14.0" prefHeight="156.0" prefWidth="491.0" stylesheets="@css/tbl.css">
+        <columns>
+          <TableColumn fx:id="tblRepairType" prefWidth="246.0" text="Repair Type" />
+            <TableColumn fx:id="tblRepairTypeCost" prefWidth="246.0" text="Repair Type Cost" />
+        </columns>
+      </TableView>
+      <Separator layoutX="35.0" layoutY="191.0" prefHeight="9.0" prefWidth="827.0" />
+      <JFXTextField fx:id="txtItemPartCode" focusColor="BLACK" labelFloat="true" layoutX="35.0" layoutY="209.0" onKeyReleased="#getItemPartsEvent" prefHeight="31.0" prefWidth="319.0" promptText="Repair Item Part Code" unFocusColor="#1900ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtItemPartDescription" focusColor="BLACK" labelFloat="true" layoutX="35.0" layoutY="264.0" prefHeight="31.0" prefWidth="319.0" promptText="Repair Item Part Description" unFocusColor="#1900ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtItemPartQty" focusColor="BLACK" labelFloat="true" layoutX="35.0" layoutY="316.0" prefHeight="31.0" prefWidth="319.0" promptText="Repair Item Part Qty" unFocusColor="#1900ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtItemPartUnitPrice" focusColor="BLACK" labelFloat="true" layoutX="35.0" layoutY="369.0" prefHeight="31.0" prefWidth="319.0" promptText="Repair Item Part Unit Price" unFocusColor="#1900ff">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="32.0" layoutY="428.0" onAction="#btnAddItemPartToCombo" prefHeight="34.0" prefWidth="151.0" style="-fx-background-color: #2471A3;" text="Add to Combo" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="203.0" layoutY="428.0" onAction="#btnDeleteItemPartFromCombo" prefHeight="34.0" prefWidth="151.0" style="-fx-background-color: #EC7063;" text="Delete from Combo" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblItemPartView" layoutX="374.0" layoutY="209.0" prefHeight="266.0" prefWidth="491.0" stylesheets="@css/tbl.css">
+         <columns>
+            <TableColumn fx:id="tblItemCode" prefWidth="75.0" text="Item Code" />
+            <TableColumn fx:id="tblItemDescription" prefWidth="128.0" text="Item Description" />
+            <TableColumn fx:id="tblItemQty" prefWidth="108.0" text="Item Qty" />
+            <TableColumn fx:id="tblItemUnitPrice" prefWidth="179.0" text="Item Unit Price" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

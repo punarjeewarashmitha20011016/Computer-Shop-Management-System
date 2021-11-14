@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="manageItemsPane" prefHeight="602.0" prefWidth="1162.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageItemsFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="602.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1162.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e3ebe5" />
+                  <Stop color="#e9eeeb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="586.0" layoutX="12.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="219.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#ccd0d3" />
+                  <Stop color="#ccd0d3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <JFXTextField fx:id="txtItemCode" labelFloat="true" layoutX="29.0" layoutY="31.0" onAction="#getAllFromItemCode" onKeyReleased="#validateFieldsWithoutBrandAndCategory" prefHeight="30.0" prefWidth="186.0" promptText="Item Code" unFocusColor="#2600ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtItemDescription" disable="true" labelFloat="true" layoutX="29.0" layoutY="84.0" onKeyReleased="#validateFieldsWithoutBrandAndCategory" prefHeight="30.0" prefWidth="186.0" promptText="Item Description" unFocusColor="#2600ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXComboBox fx:id="cmbItemBrand" labelFloat="true" layoutX="29.0" layoutY="136.0" prefHeight="25.0" prefWidth="186.0" promptText="Item Brand" styleClass="txtForFields" stylesheets="@css/text.css" unFocusColor="#2600ff" />
+      <JFXComboBox fx:id="cmbItemCategory" labelFloat="true" layoutX="29.0" layoutY="188.0" prefHeight="25.0" prefWidth="186.0" promptText="Item Category" styleClass="txtForFields" stylesheets="@css/text.css" unFocusColor="#2600ff" />
+      <JFXTextField fx:id="txtItemRam" disable="true" labelFloat="true" layoutX="29.0" layoutY="237.0" onKeyReleased="#validateFieldsWithoutBrandAndCategory" prefHeight="30.0" prefWidth="186.0" promptText="Item RAM" unFocusColor="#2600ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtItemStorage" disable="true" labelFloat="true" layoutX="29.0" layoutY="288.0" onKeyReleased="#validateFieldsWithoutBrandAndCategory" prefHeight="30.0" prefWidth="186.0" promptText="Item Storage" unFocusColor="#2600ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtItemQuantity" disable="true" labelFloat="true" layoutX="29.0" layoutY="337.0" onKeyReleased="#validateFieldsWithoutBrandAndCategory" prefHeight="30.0" prefWidth="186.0" promptText="Item Quantity" unFocusColor="#2600ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtItemBuyingPrice" disable="true" labelFloat="true" layoutX="29.0" layoutY="386.0" onKeyReleased="#validateFieldsWithoutBrandAndCategory" prefHeight="30.0" prefWidth="186.0" promptText="Item Buying Price" unFocusColor="#2600ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtItemUnitPrice" disable="true" labelFloat="true" layoutX="29.0" layoutY="433.0" onKeyReleased="#validateFieldsWithoutBrandAndCategory" prefHeight="30.0" prefWidth="186.0" promptText="Item Unit Price" unFocusColor="#2600ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="addItemId" buttonType="RAISED" disable="true" layoutX="29.0" layoutY="479.0" onAction="#btnAddItem" prefHeight="32.0" prefWidth="186.0" style="-fx-background-color: #2471A3;" text="Add Item" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="516.0" onAction="#btnUpdateItem" prefHeight="32.0" prefWidth="186.0" style="-fx-background-color: #2471A3;" text="Update Item" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="29.0" layoutY="554.0" onAction="#btnDeleteItem" prefHeight="32.0" prefWidth="186.0" style="-fx-background-color: #EC7063;" text="Delete Item" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="242.0" layoutY="31.0" orientation="VERTICAL" prefHeight="557.0" prefWidth="0.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="112.0" layoutX="267.0" layoutY="31.0" stroke="#2600ff" strokeType="INSIDE" width="247.0" />
+      <JFXTextField fx:id="txtAddItemBrand" labelFloat="true" layoutX="278.0" layoutY="47.0" onKeyReleased="#validateItemBrandEvent" prefHeight="25.0" prefWidth="227.0" promptText="Add Item Brand" unFocusColor="#2600ff">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="AddItemBrandId" buttonType="RAISED" disable="true" layoutX="333.0" layoutY="93.0" onAction="#btnAddItemBrand" prefHeight="32.0" prefWidth="172.0" style="-fx-background-color: #2471A3;" text="Add Item Brand" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="112.0" layoutX="546.0" layoutY="31.0" stroke="#2600ff" strokeType="INSIDE" width="247.0" />
+      <JFXTextField fx:id="txtAddItemCategory" labelFloat="true" layoutX="557.0" layoutY="47.0" onKeyReleased="#validateItemCategoryEvent" prefHeight="25.0" prefWidth="227.0" promptText="Add Item Category" unFocusColor="#2600ff">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="addItemCategoryId" buttonType="RAISED" disable="true" layoutX="612.0" layoutY="93.0" onAction="#btnAddItemCategory" prefHeight="32.0" prefWidth="172.0" style="-fx-background-color: #2471A3;" text="Add Item Category" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblItemView" layoutX="267.0" layoutY="165.0" prefHeight="425.0" prefWidth="863.0" stylesheets="@css/tbl.css">
+        <columns>
+          <TableColumn fx:id="tblItemCode" prefWidth="70.0" text="Item Code" />
+            <TableColumn fx:id="tblItemDescription" prefWidth="145.0" text="Item Description" />
+            <TableColumn fx:id="tblItemBrand" minWidth="0.0" prefWidth="94.0" text="Item Brand" />
+            <TableColumn fx:id="tblItemCategory" minWidth="0.0" prefWidth="109.0" text="Item Category" />
+            <TableColumn fx:id="tblItemQty" minWidth="0.0" prefWidth="54.0" text="Item Qty" />
+            <TableColumn fx:id="tblItemRam" minWidth="0.0" prefWidth="87.0" text="Item RAM(GB)" />
+            <TableColumn fx:id="tblItemStorage" minWidth="0.0" prefWidth="106.0" text="Item Storage(GB)" />
+            <TableColumn fx:id="tblItemBuyingPrice" minWidth="0.0" prefWidth="105.0" text="Item Buying Price" />
+            <TableColumn fx:id="tblItemUnitPrice" minWidth="0.0" prefWidth="92.0" text="Item Unit Price" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtSearchItemFromTheTable" layoutX="842.0" layoutY="118.0" prefHeight="25.0" prefWidth="288.0" promptText="Search by Item Code, Description, Brand, Category" />
+      <ImageView fitHeight="32.0" fitWidth="36.0" layoutX="801.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="78.0" layoutX="947.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/shopping-bag.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

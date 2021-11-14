@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="602.0" prefWidth="1159.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RepairItemsFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="602.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1159.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e3ebe5" />
+                  <Stop color="#e9eeeb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="590.0" layoutX="12.0" layoutY="5.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="219.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#ccd0d3" />
+                  <Stop color="#ccd0d3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <JFXComboBox fx:id="cmbCustomerId" labelFloat="true" layoutX="26.0" layoutY="21.0" onAction="#setCustomerDetailsToFields" prefHeight="25.0" prefWidth="196.0" promptText="Customer Id" unFocusColor="#2200ff" />
+      <JFXTextField fx:id="txtCustomerName" disable="true" editable="false" labelFloat="true" layoutX="26.0" layoutY="67.0" prefHeight="34.0" prefWidth="196.0" promptText="Customer Name" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCustomerContactNo" disable="true" editable="false" labelFloat="true" layoutX="26.0" layoutY="123.0" prefHeight="34.0" prefWidth="196.0" promptText="Customer Contact No" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCustomerAddress" disable="true" editable="false" labelFloat="true" layoutX="26.0" layoutY="178.0" prefHeight="34.0" prefWidth="196.0" promptText="Customer Address" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <Separator layoutX="24.0" layoutY="230.0" prefWidth="200.0" />
+      <Separator layoutX="244.0" layoutY="23.0" orientation="VERTICAL" prefHeight="551.0" prefWidth="0.0" />
+      <JFXTextField fx:id="txtRepairId" disable="true" labelFloat="true" layoutX="26.0" layoutY="250.0" onKeyReleased="#addRepairEvent" prefHeight="34.0" prefWidth="196.0" promptText="Repair Id" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtRepairItemDescription" disable="true" labelFloat="true" layoutX="26.0" layoutY="305.0" onKeyReleased="#addRepairEvent" prefHeight="34.0" prefWidth="196.0" promptText="Repair Item Description" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXComboBox fx:id="cmbRepairType" labelFloat="true" layoutX="26.0" layoutY="357.0" onAction="#selectRepairTypeCombo" prefHeight="32.0" prefWidth="196.0" promptText="Repair Type" styleClass="txtForFields" stylesheets="@css/text.css" unFocusColor="#2200ff" />
+      <JFXComboBox fx:id="cmbRepairPart" labelFloat="true" layoutX="26.0" layoutY="407.0" onAction="#selectRepairPartCombo" prefHeight="32.0" prefWidth="196.0" promptText="Repair Part" styleClass="txtForFields" stylesheets="@css/text.css" unFocusColor="#2200ff" />
+      <JFXDatePicker fx:id="dtpRepairStartDate" disable="true" layoutX="26.0" layoutY="452.0" prefHeight="34.0" prefWidth="207.0" promptText="Repair Start Date" styleClass="txtForFields" stylesheets="@css/text.css" />
+      <JFXDatePicker fx:id="dtpRepairEstimatedFinishedDate" disable="true" layoutX="26.0" layoutY="498.0" prefHeight="32.0" prefWidth="207.0" promptText="Repair Estimated Finished Date" styleClass="txtForFields" stylesheets="@css/text.css" />
+      <JFXTextField fx:id="txtRepairCost" editable="false" labelFloat="true" layoutX="26.0" layoutY="549.0" onKeyReleased="#addRepairEvent" prefHeight="34.0" prefWidth="196.0" promptText="Repair Cost" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="addRepairBtnId" disable="true" layoutX="262.0" layoutY="23.0" onAction="#btnAddRepair" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #2471A3;" text="Add Repair" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="422.0" layoutY="23.0" onAction="#btnRepairsInProgress" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #2471A3;" text="Repairs In Progress" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="582.0" layoutY="23.0" onAction="#btnRepairFinished" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #2471A3;" text="Repairs Finished" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="742.0" layoutY="23.0" onAction="#btnAddRepairServicesAndParts" prefHeight="34.0" prefWidth="227.0" style="-fx-background-color: #2471A3;" text="Add Repair Services and Parts" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane fx:id="repairItemsChildPane" layoutX="262.0" layoutY="83.0" prefHeight="488.0" prefWidth="866.0">
+         <children>
+            <TableView fx:id="tblRepairDetails" layoutY="71.0" prefHeight="417.0" prefWidth="866.0" stylesheets="@css/tbl.css">
+              <columns>
+                <TableColumn fx:id="tblRepairId" prefWidth="148.0" text="Repair Id" />
+                  <TableColumn fx:id="tblRepairCount" prefWidth="79.0" text="Repair Count" />
+                  <TableColumn fx:id="tblrepairItemDescription" prefWidth="213.0" text="Repair Item Description" />
+                  <TableColumn fx:id="tblRepairType" prefWidth="149.0" text="Repair Type" />
+                  <TableColumn fx:id="tblRepairPart" prefWidth="162.0" text="Repair Part" />
+                  <TableColumn fx:id="tblRepairCost" prefWidth="114.0" text="Repair Cost" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txtSearchRepairDetails" layoutX="42.0" layoutY="20.0" onKeyReleased="#searchRepairDetails" prefHeight="25.0" prefWidth="356.0" promptText="Search Repair Details by Repair Id, Customer Id">
+               <font>
+                  <Font name="Times New Roman" size="15.0" />
+               </font></TextField>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/magnifying-glass.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <JFXButton layoutX="973.0" layoutY="23.0" onAction="#btnMakeRepairOrder" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #2471A3;" text="Make Repair order" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="262.0" layoutY="67.0" prefHeight="3.0" prefWidth="866.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="488.0" prefWidth="866.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RepairFinishedFromController">
+   <children>
+      <TableView fx:id="tblRepairsFinished" layoutY="102.0" prefHeight="386.0" prefWidth="866.0" stylesheets="@css/tbl.css">
+        <columns>
+          <TableColumn fx:id="tblCustomerId" prefWidth="98.0" text="Customer Id" />
+            <TableColumn fx:id="tblRepairId" prefWidth="122.0" text="Repair Id" />
+            <TableColumn fx:id="tblRepairItemDescription" prefWidth="178.0" text="Repair Item Description" />
+            <TableColumn fx:id="tblRepairStartDate" prefWidth="170.0" text="Repair Start Date" />
+            <TableColumn fx:id="tblRepairFinishedDate" minWidth="4.0" prefWidth="144.0" text="Repair Finished Date" />
+            <TableColumn fx:id="tblRepairCost" minWidth="4.0" prefWidth="153.0" text="Repair Cost" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtSearchRepairsFromRepairsFinishedTable" layoutX="54.0" layoutY="40.0" prefHeight="31.0" prefWidth="360.0" promptText="Search Repairs In Progress by repair Id, Customer Id">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="13.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="433.0" layoutY="38.0" onAction="#btnAddToMakeRepairOrder" prefHeight="34.0" prefWidth="211.0" style="-fx-background-color: #2471A3;" text="Add to Make Repair Order" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="652.0" layoutY="38.0" onAction="#ViewRepairFinishedDetails" prefHeight="34.0" prefWidth="211.0" style="-fx-background-color: #2471A3;" text="View Repair Finished Details" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="manageCashierPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="1162.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCashierFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="602.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1162.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e3ebe5" />
+                  <Stop color="#e9eeeb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="586.0" layoutX="23.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="219.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#ccd0d3" />
+                  <Stop color="#ccd0d3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <JFXTextField fx:id="txtCashierId" labelFloat="true" layoutX="43.0" layoutY="100.0" onAction="#getAllFromCashier" onKeyReleased="#cashierTextFieldEvent" prefHeight="30.0" prefWidth="181.0" promptText="Cashier ID">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCashierName" disable="true" labelFloat="true" layoutX="43.0" layoutY="154.0" onKeyReleased="#cashierTextFieldEvent" prefHeight="30.0" prefWidth="181.0" promptText="Cashier Name">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCashierNic" disable="true" labelFloat="true" layoutX="43.0" layoutY="205.0" onKeyReleased="#cashierTextFieldEvent" prefHeight="30.0" prefWidth="181.0" promptText="Cashier NIC">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCashierContactNo" disable="true" labelFloat="true" layoutX="43.0" layoutY="255.0" onKeyReleased="#cashierTextFieldEvent" prefHeight="30.0" prefWidth="181.0" promptText="Cashier Contact No">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCashierUserName" disable="true" labelFloat="true" layoutX="43.0" layoutY="306.0" onKeyReleased="#cashierTextFieldEvent" prefHeight="30.0" prefWidth="181.0" promptText="Cashier User Name">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCashierPassword" disable="true" labelFloat="true" layoutX="43.0" layoutY="358.0" onKeyReleased="#cashierTextFieldEvent" prefHeight="30.0" prefWidth="181.0" promptText="Cashier Password">
+         <font>
+            <Font size="14.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="addCashierBtn" buttonType="RAISED" disable="true" layoutX="43.0" layoutY="459.0" onAction="#btnAddCashier" prefHeight="32.0" prefWidth="181.0" style="-fx-background-color: #2471A3;" text="Add Cashier" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="updateCashierButton" buttonType="RAISED" layoutX="43.0" layoutY="503.0" onAction="#btnUpdateCashier" prefHeight="32.0" prefWidth="181.0" style="-fx-background-color: #2471A3;" text="Update Cashier" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="deleteCashierButton" buttonType="RAISED" layoutX="43.0" layoutY="547.0" onAction="#btnDeleteCashier" prefHeight="32.0" prefWidth="181.0" style="-fx-background-color: #EC7063;" text="Delete Cashier" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TableView fx:id="tblCashierDetailsView" layoutX="298.0" layoutY="96.0" prefHeight="483.0" prefWidth="835.0" style="-fx-border-color: #1900ff;" stylesheets="@css/tbl.css">
+        <columns>
+          <TableColumn fx:id="tblCashierId" prefWidth="111.00003051757812" text="Cashier ID" />
+            <TableColumn fx:id="tblCashierName" prefWidth="139.0" text="Cashier Name" />
+            <TableColumn fx:id="tblCashierNic" prefWidth="139.0" text="Cashier NIC" />
+            <TableColumn fx:id="tblCashierContactNo" prefWidth="139.0" text="Cashier Contact No" />
+            <TableColumn fx:id="tblCashierUserName" prefWidth="184.0" text="Cashier User Name" />
+            <TableColumn fx:id="tblCashierPassword" prefWidth="119.0" text="Cashier Password" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtSearchCashier" layoutX="424.0" layoutY="19.0" prefHeight="25.0" prefWidth="308.0" promptText="Search By ID, Name, Contact No">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Label layoutX="298.0" layoutY="25.0" prefHeight="19.0" prefWidth="92.0" text="Search Cashier">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Separator layoutX="265.0" layoutY="1.0" orientation="VERTICAL" prefHeight="588.0" prefWidth="6.0" />
+      <ImageView fitHeight="32.0" fitWidth="34.0" layoutX="386.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="298.0" layoutY="64.0" prefHeight="19.0" prefWidth="203.0" text="* Note that cashier password is encrypted" textFill="#3700ff">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="65.0" fitWidth="101.0" layoutX="90.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/cashier.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnChooseFileID" buttonType="RAISED" disable="true" layoutX="132.0" layoutY="408.0" onAction="#btnChooseFile" prefHeight="11.0" prefWidth="92.0" style="-fx-background-color: #2471A3;" text="Choose File" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <StackPane layoutX="52.0" layoutY="398.0" styleClass="image" stylesheets="@css/css.css">
+         <children>
+            <ImageView fx:id="imgSetCashierImage" fitHeight="49.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

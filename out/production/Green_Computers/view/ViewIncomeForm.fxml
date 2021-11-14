@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="602.0" prefWidth="1159.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ViewIncomeFormController">
+   <children>
+      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="32.0" layoutY="190.0" onAction="#btnCustomerDetails" prefHeight="147.0" prefWidth="256.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 5; -fx-border-color: #00ff66; -fx-border-radius: 5; -fx-border-width: 2;" text="Customer Details" textFill="WHITE">
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="88.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/Customer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="32.0" layoutY="24.0" onAction="#btnIncomeStatement" prefHeight="147.0" prefWidth="256.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 5; -fx-border-color: #00ff66; -fx-border-radius: 5; -fx-border-width: 2;" text="Income Statement" textFill="WHITE">
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="88.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/Report.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="306.0" layoutY="25.0" onAction="#btnItemDetails" prefHeight="134.0" prefWidth="256.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 5; -fx-border-color: #00ff66; -fx-border-radius: 5; -fx-border-width: 2;" text="Item Details" textFill="WHITE">
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="88.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/computer.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="306.0" layoutY="190.0" onAction="#btnMostSellingItem" prefHeight="147.0" prefWidth="256.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 5; -fx-border-color: #00ff66; -fx-border-radius: 5; -fx-border-width: 2;" text="Most Selling Items" textFill="WHITE">
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="148.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/income.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane fx:id="paneToViewReport" layoutX="636.0" layoutY="26.0" prefHeight="558.0" prefWidth="479.0" style="-fx-border-color: #1E8449; -fx-border-radius: 5; -fx-border-width: 5;" />
+      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="32.0" layoutY="356.0" onAction="#btnNormalOrderDetails" prefHeight="147.0" prefWidth="256.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 5; -fx-border-color: #00ff66; -fx-border-radius: 5; -fx-border-width: 2;" text="Order Details" textFill="WHITE">
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="88.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/cart.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="306.0" layoutY="356.0" onAction="#btnRepairOrderDetails" prefHeight="147.0" prefWidth="256.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 5; -fx-border-color: #00ff66; -fx-border-radius: 5; -fx-border-width: 2;" text="Repair Details" textFill="WHITE">
+         <graphic>
+            <ImageView accessibleRole="BUTTON" fitHeight="88.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@assets/repairSecond.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" contentDisplay="TOP" layoutX="32.0" layoutY="521.0" onAction="#btnReturnDetails" prefHeight="63.0" prefWidth="529.0" style="-fx-background-color: #2C3E50; -fx-background-radius: 5; -fx-border-color: #00ff66; -fx-border-radius: 5; -fx-border-width: 2;" text="Return Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView accessibleRole="BUTTON" fitHeight="53.0" fitWidth="50.0" layoutX="128.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/return.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

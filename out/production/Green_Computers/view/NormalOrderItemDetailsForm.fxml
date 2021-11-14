@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="normalOrderItemDetailsPane" prefHeight="432.0" prefWidth="952.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.NormalOrderDetailsFormController">
+   <children>
+      <TableView fx:id="tblNormalOrderItemDetailsView" layoutX="14.0" layoutY="87.0" prefHeight="326.0" prefWidth="921.0" stylesheets="@css/tbl.css">
+        <columns>
+          <TableColumn fx:id="tblOrderId" prefWidth="87.0" text="Order Id" />
+            <TableColumn fx:id="tblItemCode" prefWidth="100.0" text="Item Code" />
+            <TableColumn fx:id="tblItemDescription" prefWidth="123.0" text="Item Description" />
+            <TableColumn fx:id="tblItemBrand" prefWidth="107.0" text="Item Brand" />
+            <TableColumn fx:id="tblItemCategory" prefWidth="112.0" text="Item Category" />
+            <TableColumn fx:id="tblItemRam" prefWidth="61.0" text="Item Ram" />
+            <TableColumn fx:id="tblItemStorage" text="Item Storage" />
+            <TableColumn fx:id="tblItemQty" prefWidth="57.0" text="Item Qty" />
+            <TableColumn fx:id="tblItemDiscount" prefWidth="96.0" text="Discount" />
+            <TableColumn fx:id="tblItemPrice" prefWidth="97.0" text="Price" />
+        </columns>
+      </TableView>
+      <Label layoutX="296.0" layoutY="20.0" text="Normal Order Details">
+         <font>
+            <Font name="Monospaced Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

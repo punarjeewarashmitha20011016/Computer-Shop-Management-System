@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="repairFinishedDetailsPane" prefHeight="432.0" prefWidth="952.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RepairFinishedDetailsFormController">
+   <children>
+      <TableView fx:id="tblRepairFinishedDetailsView" layoutX="14.0" layoutY="87.0" prefHeight="326.0" prefWidth="921.0" stylesheets="@css/tbl.css">
+         <columns>
+            <TableColumn fx:id="tblRepairId" prefWidth="87.0" text="Repair Id" />
+            <TableColumn fx:id="tblRepairCount" text="Repair Count" />
+            <TableColumn fx:id="tblRepairItemDescription" prefWidth="241.99998474121094" text="Repair Item Description" />
+            <TableColumn fx:id="tblRepairType" prefWidth="179.0" text="Repair Type" />
+            <TableColumn fx:id="tblRepairPart" prefWidth="194.0" text="Repair Part" />
+            <TableColumn fx:id="tblRepairUnitPrice" prefWidth="134.0" text="Repair Unit Price" />
+         </columns>
+      </TableView>
+      <Label layoutX="269.0" layoutY="21.0" text="Repair Finished Details">
+         <font>
+            <Font name="Monospaced Bold" size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

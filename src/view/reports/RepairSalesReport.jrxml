@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RepairSalesReport" pageWidth="405" pageHeight="480" columnWidth="365" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b2cac7be-2960-4aa2-ae43-f9fcac188034">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="orderId" class="java.lang.String"/>
+	<parameter name="customerName" class="java.lang.String"/>
+	<parameter name="cashierName" class="java.lang.String"/>
+	<parameter name="subTotal" class="java.lang.Double"/>
+	<parameter name="discount" class="java.lang.Double"/>
+	<parameter name="total" class="java.lang.Double"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="repairId" class="java.lang.String"/>
+	<field name="repairCount" class="java.lang.Integer"/>
+	<field name="repairItemDescription" class="java.lang.String"/>
+	<field name="repairType" class="java.lang.String"/>
+	<field name="repairPart" class="java.lang.String"/>
+	<field name="repairCost" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="365" height="75" uuid="fae7d3b3-02c4-4378-b0c8-582a98368b86">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="365" height="35" forecolor="#1E8449" uuid="fce5d14d-aad8-4935-89c5-daf1324081f3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Tahoma" size="19" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GREEN COMPUTERS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="36" width="120" height="16" forecolor="#2C3E50" uuid="39036927-adf6-4ce4-a820-1b0ebaf03055"/>
+				<text><![CDATA[   Date  		Time]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="3" y="54" width="70" height="20" forecolor="#1E8449" uuid="d4c5666d-daf8-4eaa-ab45-d4237130c94d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="70" y="54" width="50" height="19" forecolor="#1E8449" uuid="33500306-0eeb-4385-8097-94bc1707bb61"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="365" height="24" uuid="a59de2f2-9127-4989-8998-5a1ea0141b29"/>
+				<textElement textAlignment="Center">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[INVOICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="247" y="54" width="117" height="20" forecolor="#2C3E50" uuid="fcd875dd-064c-4567-8a80-65aa5852bf79">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Tele: 0768777908 / 0382292649]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="24" width="91" height="30" forecolor="#2C3E50" uuid="5acc1431-cb4b-4e84-ace2-04e6428df3f3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[No.49/14, Maningamuwa, Welmilla]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="11" width="365" height="19" forecolor="#FFFFFF" backcolor="#2C3E50" uuid="b67da988-8ce7-46bf-bbda-a9d91a3cb710">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="99" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="3" width="365" height="68" uuid="f929db6c-55ec-4890-be0f-9141138c4085"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="9" width="66" height="18" uuid="bebac707-4732-474c-8eb8-dc2836b4997f"/>
+				<text><![CDATA[Invoice No :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="29" width="66" height="14" uuid="60c7b285-c342-48a9-903e-a472806b8cde"/>
+				<text><![CDATA[Date 	    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="47" width="66" height="14" uuid="b760bbc5-c36e-430d-ace7-9c1e44773d2b"/>
+				<text><![CDATA[Time 	    :]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="82" y="29" width="74" height="14" forecolor="#1E8449" uuid="5a632083-5d64-4fdf-abb9-dd18066f26c9"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="82" y="47" width="74" height="14" forecolor="#1E8449" uuid="acba5972-a491-470a-bb56-b9a0d34f6146"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="197" y="47" width="60" height="14" uuid="a07d7874-eff4-42b6-ae74-e876e6445ff2"/>
+				<text><![CDATA[Location   :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="29" width="60" height="14" uuid="2c944277-a21e-4a2b-b87a-9894e241492a"/>
+				<text><![CDATA[SalesMan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="9" width="60" height="18" uuid="8d0bf19f-227c-4251-9d02-1c617726fdba"/>
+				<text><![CDATA[Customer :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="50" width="90" height="18" uuid="91fe24fa-8b07-467b-b634-b84356583046">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Welmilla]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="0" y="80" width="365" height="19" backcolor="#1B9E4F" uuid="6b52bd89-3bcf-44b9-a4e7-501686988bdd">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="81" width="54" height="18" forecolor="#FFFFFF" uuid="06437c4e-f0d3-495a-9ebf-d88d9f8d016b"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Repair Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="81" width="66" height="18" forecolor="#FFFFFF" uuid="d8b40fc5-1517-440f-98c1-dbc4f09d8cb9"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Repair Count]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="81" width="77" height="18" forecolor="#FFFFFF" uuid="52ab91f5-1611-480d-b761-75334e939650"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Item Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="197" y="81" width="60" height="18" forecolor="#FFFFFF" uuid="d61caf87-f3d5-4f22-ae1a-ca7adf92f4d0"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Repair Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="81" width="53" height="18" forecolor="#FFFFFF" uuid="92449e90-0c00-4ef4-820f-5fa26748dbf7"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Repair Part]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="81" width="55" height="18" forecolor="#FFFFFF" uuid="dbf19c0c-4bea-4672-ba53-01a0164d763c"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Repair Cost]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="82" y="9" width="74" height="16" uuid="98d4ba01-3200-464a-bf0a-dfe2a3f15064"/>
+				<textFieldExpression><![CDATA[$P{orderId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="9" width="90" height="16" uuid="b347688d-8adb-454b-8531-e4a5c50e1ff5"/>
+				<textFieldExpression><![CDATA[$P{customerName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="29" width="91" height="14" uuid="2d1b9b92-1481-4fbc-ba9c-2f6c8e7cc0eb"/>
+				<textFieldExpression><![CDATA[$P{cashierName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="54" height="30" uuid="c8177607-3048-4635-b707-108b402b0e9c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4de3d975-7bfa-4b5d-b3d1-2a02803a4656"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{repairId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="66" height="30" uuid="5e13ba0a-43ae-448d-9c16-98580b8fc240">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bbb5f536-9010-49bd-a022-37e0d26438ac"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{repairCount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="77" height="30" uuid="ed81b9d0-a9b7-4fbf-83d7-9384f443dba7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e38c48f7-9b3a-42f5-9b49-2646be23a871"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{repairItemDescription}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="0" width="60" height="30" uuid="36d0407e-587e-46e5-84b2-7e80cc3a254d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6f1474ba-e17b-435f-8753-95a5ecc9434e"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{repairType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="0" width="53" height="30" uuid="b90dc06a-9d9c-4a2c-ba2e-4f5def481970">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="297f56f2-2cdd-470e-a9d6-55749e38097e"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{repairPart}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="0" width="55" height="30" uuid="92b92841-5eed-4eb7-bf97-4d27364e83af">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c4ac8cb2-8d7d-4563-a7c1-7820e8654f06"/>
+				</reportElement>
+				<box leftPadding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{repairCost}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="96" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="3" width="365" height="68" uuid="1d175ff0-2a17-4d59-9ade-2d0deab0957f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="6" y="49" width="57" height="16" uuid="27da8f2a-304e-4e39-a36a-36adf60058d7"/>
+				<text><![CDATA[Total          :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="28" width="57" height="16" uuid="89a4b514-86af-49de-b7db-5a7669cf2087"/>
+				<text><![CDATA[Discount    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="7" width="57" height="16" uuid="e1dd8fb1-6e74-470d-b976-85e20feb5b5c"/>
+				<text><![CDATA[Sub Total  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="155" y="9" width="104" height="32" uuid="a08cd711-5737-438d-a709-084d8720ddc4"/>
+				<textElement textAlignment="Center">
+					<font size="15" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Thank You...!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="34" width="122" height="32" uuid="1cc79fdf-8337-4380-9c94-35929b928300"/>
+				<textElement textAlignment="Center">
+					<font size="15" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Come Again]]></text>
+			</staticText>
+			<image>
+				<reportElement x="280" y="8" width="73" height="56" uuid="1f699ca1-ef6e-4306-99c3-14bfd8e7970e"/>
+				<imageExpression><![CDATA["C:/Users/Punarjeewa/Desktop/Assignments/FirstSemesterFinalProject/Green_Computers/src/view/assets/extraSmall.png"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="0" y="78" width="365" height="17" forecolor="#FFFFFF" backcolor="#2C3E50" uuid="4a3aa618-4afb-4e47-9eb0-ce9ab01aec95"/>
+			</rectangle>
+			<textField>
+				<reportElement x="0" y="80" width="365" height="16" forecolor="#FFFFFF" uuid="22ad82c9-d9ae-4b84-a1a3-f11c4942b551"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="7" width="72" height="16" uuid="b2b6274a-c9c3-48ae-a2fb-0c1d88cb20f6"/>
+				<textFieldExpression><![CDATA[$P{subTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="28" width="72" height="16" uuid="4995c557-489d-495a-b2ac-0cf565d68ab4"/>
+				<textFieldExpression><![CDATA[$P{discount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="73" y="50" width="72" height="15" uuid="566d57ff-c3f6-46ac-9b75-6ece86d764dc"/>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

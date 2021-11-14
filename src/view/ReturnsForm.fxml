@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="returnItemsPane" prefHeight="602.0" prefWidth="1159.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReturnsFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="602.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1159.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e3ebe5" />
+                  <Stop color="#e9eeeb" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <TextField fx:id="txtSearchOrderDetails" layoutX="49.0" layoutY="11.0" onKeyReleased="#searchOrderDetailsEvent" prefHeight="25.0" prefWidth="453.0" promptText="Search Order Details by Order Id">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="144.0" layoutX="9.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="489.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#ccd0d3" />
+                  <Stop color="#ccd0d3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <JFXTextField fx:id="txtCustomerId" disable="true" labelFloat="true" layoutX="49.0" layoutY="60.0" onKeyReleased="#normalOrderKeyEvent" prefHeight="29.0" prefWidth="185.0" promptText="Customer Id" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtOrderDate" disable="true" labelFloat="true" layoutX="49.0" layoutY="105.0" onKeyReleased="#normalOrderKeyEvent" prefHeight="29.0" prefWidth="185.0" promptText="Order Date" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtOrderTime" disable="true" labelFloat="true" layoutX="49.0" layoutY="150.0" onKeyReleased="#normalOrderKeyEvent" prefHeight="29.0" prefWidth="185.0" promptText="Order Time" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtOrderPrice" disable="true" labelFloat="true" layoutX="275.0" layoutY="60.0" onKeyReleased="#normalOrderKeyEvent" prefHeight="29.0" prefWidth="185.0" promptText="Order Price" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <TextField fx:id="txtSearchReturnItems" layoutX="558.0" layoutY="10.0" prefHeight="25.0" prefWidth="575.0" promptText="Search Return Items by Return Id, Order Id, Item Code, Customer Id">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="144.0" layoutX="520.0" layoutY="48.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="624.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#ccd0d3" />
+                  <Stop color="#ccd0d3" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <JFXTextField fx:id="txtReturnId" labelFloat="true" layoutX="535.0" layoutY="63.0" onKeyReleased="#returnKeyEvent" prefHeight="25.0" prefWidth="149.0" promptText="Return Id" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtReturnOrderId" disable="true" labelFloat="true" layoutX="535.0" layoutY="106.0" onKeyReleased="#returnKeyEvent" prefHeight="25.0" prefWidth="149.0" promptText="Order Id" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtReturnCustomerId" disable="true" labelFloat="true" layoutX="535.0" layoutY="153.0" onKeyReleased="#returnKeyEvent" prefHeight="25.0" prefWidth="149.0" promptText="Customer Id" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtReturnItemCode" disable="true" labelFloat="true" layoutX="697.0" layoutY="63.0" onKeyReleased="#returnKeyEvent" prefHeight="25.0" prefWidth="149.0" promptText="Item Code" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtReturnItemDescription" disable="true" labelFloat="true" layoutX="697.0" layoutY="106.0" onKeyReleased="#returnKeyEvent" prefHeight="25.0" prefWidth="149.0" promptText="Item Description" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtReturnQty" disable="true" labelFloat="true" layoutX="697.0" layoutY="153.0" onKeyReleased="#returnKeyEvent" prefHeight="25.0" prefWidth="149.0" promptText="Return Qty" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtReturnReason" disable="true" labelFloat="true" layoutX="858.0" layoutY="63.0" onKeyReleased="#returnKeyEvent" prefHeight="29.0" prefWidth="274.0" promptText="Return Reason" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtReturnItemPrice" disable="true" labelFloat="true" layoutX="858.0" layoutY="106.0" onKeyReleased="#returnKeyEvent" prefHeight="29.0" prefWidth="274.0" promptText="Item Price" unFocusColor="#3700ff">
+         <font>
+            <Font size="13.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="acceptReturnBtnId" disable="true" layoutX="862.0" layoutY="150.0" onAction="#btnAcceptReturn" prefHeight="34.0" prefWidth="134.0" style="-fx-background-color: #28B463#28B463;" text="Accept Return" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="clearBtnId" disable="true" layoutX="1012.0" layoutY="150.0" onAction="#btnClear" prefHeight="34.0" prefWidth="112.0" style="-fx-background-color: grey;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Yu Gothic Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Separator layoutX="507.0" layoutY="7.0" orientation="VERTICAL" prefHeight="593.0" prefWidth="0.0" />
+      <TableView fx:id="tblOrderDetailsView" layoutX="10.0" layoutY="195.0" prefHeight="401.0" prefWidth="489.0" stylesheets="@css/tbl.css">
+        <columns>
+          <TableColumn fx:id="tblOrderId" prefWidth="83.0" text="Order Id" />
+            <TableColumn fx:id="tblItemCode" prefWidth="89.0" text="Item Code" />
+            <TableColumn fx:id="tblItemDescription" prefWidth="112.0" text="Item Description" />
+            <TableColumn fx:id="tblQty" prefWidth="36.0" text="Qty" />
+            <TableColumn fx:id="tblDiscount" prefWidth="69.0" text="Discount" />
+            <TableColumn fx:id="tblPrice" minWidth="5.0" prefWidth="99.0" text="Price" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tblReturnItemsView" layoutX="518.0" layoutY="195.0" prefHeight="401.0" prefWidth="624.0" stylesheets="@css/tbl.css">
+         <columns>
+            <TableColumn fx:id="tblReturnId" prefWidth="72.0" text="Return Id" />
+            <TableColumn fx:id="tblReturnOrderId" prefWidth="82.0" text="Order Id" />
+            <TableColumn fx:id="tblReturnItemCode" prefWidth="84.0" text="Item Code" />
+            <TableColumn fx:id="tblReturnItemDescription" prefWidth="105.0" text="Item Description" />
+            <TableColumn fx:id="tblReturnQty" prefWidth="66.0" text="Return Qty" />
+            <TableColumn fx:id="tblReturnReason" prefWidth="133.0" text="Return Reason" />
+            <TableColumn fx:id="tblReturnPrice" prefWidth="81.0" text="Price" />
+         </columns>
+      </TableView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="10.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="518.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageAdminFormController">
+   <children>
+      <Rectangle fx:id="createAdminAccountView" arcHeight="5.0" arcWidth="5.0" height="447.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="436.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#55585b" />
+                  <Stop color="#362f33" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <JFXButton fx:id="btnGenerateAdmin" buttonType="RAISED" layoutX="309.0" layoutY="15.0" onAction="#btnGenerateAdminId" style="-fx-background-color: blue;" text="Generate Admin ID" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtAdminId" disable="true" focusColor="WHITE" labelFloat="true" layoutX="68.0" layoutY="48.0" onKeyReleased="#validateAdminTextFieldEvent" prefHeight="31.0" prefWidth="292.0" promptText="Admin ID" styleClass="txt" stylesheets="@css/css.css" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtAdminName" disable="true" focusColor="WHITE" labelFloat="true" layoutX="68.0" layoutY="98.0" onKeyReleased="#validateAdminTextFieldEvent" prefHeight="31.0" prefWidth="292.0" promptText="Admin Name" styleClass="txt" stylesheets="@css/css.css" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtAdminNic" disable="true" focusColor="WHITE" labelFloat="true" layoutX="69.0" layoutY="147.0" onKeyReleased="#validateAdminTextFieldEvent" prefHeight="31.0" prefWidth="292.0" promptText="Admin NIC" styleClass="txt" stylesheets="@css/css.css" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtAdminContactNo" disable="true" focusColor="WHITE" labelFloat="true" layoutX="69.0" layoutY="197.0" onKeyReleased="#validateAdminTextFieldEvent" prefHeight="31.0" prefWidth="292.0" promptText="Admin Contact Number" styleClass="txt" stylesheets="@css/css.css" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <Label fx:id="lblSetAdminId" layoutX="252.0" layoutY="16.0" prefHeight="25.0" prefWidth="51.0" text="A-001 : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtAdminUserName" disable="true" focusColor="WHITE" labelFloat="true" layoutX="69.0" layoutY="247.0" onKeyReleased="#validateAdminTextFieldEvent" prefHeight="31.0" prefWidth="292.0" promptText="Admin User Name" styleClass="txt" stylesheets="@css/css.css" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtAdminPassword" disable="true" focusColor="WHITE" labelFloat="true" layoutX="69.0" layoutY="297.0" onKeyReleased="#validateAdminTextFieldEvent" prefHeight="31.0" prefWidth="292.0" promptText="Admin Password" styleClass="txt" stylesheets="@css/css.css" unFocusColor="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="createAccountBtnId" buttonType="RAISED" disable="true" layoutX="254.0" layoutY="391.0" onAction="#btnCreateAccount" prefHeight="34.0" prefWidth="106.0" style="-fx-background-color: green;" text="Create Account" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="70.0" layoutY="391.0" onAction="#btnBackToLogin" prefHeight="34.0" prefWidth="99.0" style="-fx-background-color: grey;" text="Back To Login" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnChooseFileId" buttonType="RAISED" layoutX="284.0" layoutY="345.0" onAction="#btnChooseFile" style="-fx-background-color: white;" text="Choose File">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXTextField fx:id="txtChooseFileLocation" focusColor="WHITE" labelFloat="true" layoutX="70.0" layoutY="345.0" onKeyReleased="#validateAdminTextFieldEvent" prefHeight="25.0" prefWidth="205.0" promptText="Image Location" styleClass="txt" stylesheets="@css/css.css" unFocusColor="WHITE" />
+      <ImageView fx:id="imgSetAdminAvatar" fitHeight="43.0" fitWidth="51.0" layoutX="10.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton buttonType="RAISED" layoutX="180.0" layoutY="391.0" onAction="#btnUpdate" prefHeight="34.0" prefWidth="62.0" style="-fx-background-color: grey;" text="Update" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

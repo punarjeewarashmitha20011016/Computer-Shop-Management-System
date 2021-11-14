@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="customerDetailsPane" prefHeight="602.0" prefWidth="1159.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageCustomerFormController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="578.0" layoutX="14.0" layoutY="12.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="1119.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#e7eee7" />
+                  <Stop color="#dfe8e0" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <JFXTextField fx:id="txtCustomerId" labelFloat="true" layoutX="45.0" layoutY="35.0" onKeyReleased="#validateCustomerDetails" prefHeight="25.0" prefWidth="196.0" promptText="Customer Id" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCustomerName" disable="true" labelFloat="true" layoutX="45.0" layoutY="84.0" onKeyReleased="#validateCustomerDetails" prefHeight="25.0" prefWidth="196.0" promptText="Customer Name" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCustomerContactNo" disable="true" labelFloat="true" layoutX="45.0" layoutY="131.0" onKeyReleased="#validateCustomerDetails" prefHeight="25.0" prefWidth="196.0" promptText="Customer Contact No" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtCustomerAddress" disable="true" labelFloat="true" layoutX="45.0" layoutY="179.0" onKeyReleased="#validateCustomerDetails" prefHeight="25.0" prefWidth="196.0" promptText="Customer Address" unFocusColor="#2200ff">
+         <font>
+            <Font size="15.0" />
+         </font></JFXTextField>
+      <JFXButton fx:id="addCustomerButtonId" disable="true" layoutX="279.0" layoutY="55.0" onAction="#btnAddCustomer" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #2471A3;" text="Add Customer" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="279.0" layoutY="112.0" onAction="#btnUpdateCustomer" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #2471A3;" text="Update Customer" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="279.0" layoutY="169.0" onAction="#deleteCustomer" prefHeight="34.0" prefWidth="155.0" style="-fx-background-color: #EC7063;" text="Delete Customer" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField fx:id="txtSearchCustomers" layoutX="86.0" layoutY="240.0" prefHeight="31.0" prefWidth="436.0" promptText="Search Customers by Customer Id, Name, Contact No, Address">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <TableView fx:id="tblCustomerDetails" layoutX="44.0" layoutY="279.0" prefHeight="297.0" prefWidth="1069.0" style="-fx-border-color: #1900ff;" stylesheets="@css/tbl.css">
+         <columns>
+            <TableColumn fx:id="tblCustomerId" prefWidth="139.0" text="Customer Id" />
+            <TableColumn fx:id="tblCustomerName" prefWidth="346.0" text="Customer Name" />
+            <TableColumn fx:id="tblCustomerTelNo" prefWidth="256.0" text="Customer Telephone Number" />
+            <TableColumn fx:id="tblCustomerAddress" prefWidth="382.0" text="Customer Address" />
+         </columns>
+      </TableView>
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="45.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/magnifying-glass.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="116.0" fitWidth="103.0" layoutX="529.0" layoutY="18.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@assets/customerPng.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="172.0" layoutX="783.0" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="329.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#50d78f" />
+                  <Stop color="#50d78f" offset="0.007662835249042145" />
+                  <Stop color="#67cd9a" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="859.0" layoutY="116.0" text="Total Customers registered" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSetTotalRegisteredCustomers" alignment="CENTER" layoutX="797.0" layoutY="47.0" prefHeight="68.0" prefWidth="292.0" text="00" textFill="WHITE">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="122.0" layoutX="783.0" layoutY="144.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 60; -fx-arc-width: 60;" width="329.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#959cbf" />
+                  <Stop color="#6363d0" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label layoutX="871.0" layoutY="241.0" text="Lastly Added Customer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSetLastlyAddedCustomer" alignment="CENTER" layoutX="797.0" layoutY="156.0" prefHeight="68.0" prefWidth="292.0" text="00" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
