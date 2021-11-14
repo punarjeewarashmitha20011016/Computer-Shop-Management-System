@@ -1,6 +1,6 @@
 #Green Computers - Computer Shop Management System
 
-_This is the final individual project which is implemented for a Computer Shop for managing their business process.
+_This is the final individual project which was implemented for a Computer Shop for managing their business process.
 The technologies which I have used to implement this application are Java, Javafx, MySql, Jaspersoft.
 This application handles the overall business processes. The business processes which is handled in this system are placing an order, placing a repair order, managing returns._
 <br />
